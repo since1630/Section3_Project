@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+	Shine by TEMPLATE STOCK
+	templatestock.co @templatestock
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Section3 Project : Better Your Investment</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+		<!-- WEB FONTS -->
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		
+		<!-- BOOTSTRAP -->
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+		<!-- FONT AWESOME -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+		<!-- CUSTOM STYLING -->
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+		<!-- PRELOADER -->	
+		<link href="{{ url_for('static', filename='css/loader.css') }}" rel="stylesheet">
+			
+	</head>
+	
+<body>
+	<!-- PRELOADER -->
+		<div id="loader-wrapper">
+			<div id="loader"><div class="sk-spinner sk-spinner-cube-grid"><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div><div class="sk-cube"></div></div></div>
+		</div>	
+		
+	<!-- HEADER -->
+		<section id="header">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-8">
+						<!-- <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" /> -->
+						<h1 class="white-text">Better Your Investment</h1>
+						<h5 class="white-text">To stock, To Fufure</h5>
+						<div id="countdown" class="white-text"></div>
+					</div>
+				</div>
+			</div>
+			<div class="animation">
+			<a class="arrow-down-animation" data-scroll href="/"><i class="fa fa-angle-down"></i></a>
+			</div>
+		</section>
+	<!-- HEADER ENDS -->
+		
+	<!-- ABOUT -->
+		<section id="about">
+			<div class="container">
+				<div class="row text-center">
+					<!-- Section 1 -->
+					<div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+						<i class="fa fa-laptop"></i>
+						<h3>Quick Response</h3>
+						<div class="colored-line-small-center"></div>
+						<p>한발 빠른 시장 대응이 가능해 집니다.</p>
+					</div>
+					<!-- Section 2 -->
+					<div data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="col-md-4 middle">
+						<i class="fa fa-lightbulb-o"></i>
+						<h3>Insight</h3>
+						<div class="colored-line-small-center"></div>						
+						<p>경제를 다각도로 이해할 수 있습니다.</p>						
+					</div>
+					<!-- Section 3 -->
+					<div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+						<i class="fa fa-newspaper-o"></i>
+						<h3>Stable Investment</h3>
+						<div class="colored-line-small-center"></div>
+						<p>객관적인 자료로 안정된 투자를 할 수 있습니다.</p>						
+					</div>
+				</div>
+			</div>			
+		</section>
+	<!-- ABOUT ENDS -->
+	
+	<!-- SUBSCRIBE -->
+		<section id="subscribe">
+			<div class="container">
+				<!-- <i data-sr="ease-in over 1s, reset" class="fa fa-envelope icontop"></i> -->
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						<h2 data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="black-text">지표 입력</h2>
+						<h5 data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="black-text">지표를 모두 입력하세요.</h5>
+						<!-- MAILCHIMP FORM -->
+
+                        <div>
+                            <form id="upload" action="/predict" method="POST">
+                                <div>
+                                    <br>
+                                    <label for="interest_rate"> Koribor 3개월 금리입력 :  </label>
+                                    <input type="number" name="interest_rate">
+                                </div>
+                                <br>
+                                <div>
+                                    <br>
+                                    <label for="economic_growth_rate"> 경제성장률 : </label>
+                                    <input type="number" name="economic_growth_rate">
+                                </div>
+                                <br>
+                                <div>
+                                    <br>
+                                    <label for="base_inflation"> 근원인플레이션률 : </label>
+                                    <input type="number" name="base_inflation">
+                                </div>
+                                <br>
+                                <div>
+                                    
+                                    <br>
+                                    <label for="interest_rate"> 기준금리 : </label>
+                                    <input type="number" name="interest_rate">
+                                </div>
+                                <br>
+                                <br>
+                                <input class="btn btn-primary" type="submit" value="예측 결과">
+                            </form>
+                        </div>
+                        
+                        <br>
+                        <br>
+                        
+						<!-- MAILCHIMP FORM ENDS -->
+					</div>
+				</div>
+			</div>	
+		</section>
+	<!-- SUBSCRIBE ENDS -->
+
+
+	
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+		<!-- SMOOTH SCROLL -->
+		<script src="{{ url_for('static', filename='js/smooth-scroll.min.js') }}"></script>
+		<!-- PARALLAX IMG -->
+		<script src="{{ url_for('static', filename='js/jquery.parallax-1.1.3.js') }}"></script>
+		<!-- SCROLL REVEAL -->
+		<script src="{{ url_for('static', filename='js/scrollReveal.min.js') }}"></script>
+		<!-- FUNCTIONS -->
+		<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+
+</body>
+</html>
