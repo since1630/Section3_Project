@@ -28,13 +28,11 @@ def create_app():
     def predict():
         if request.method == 'POST':
 
-            data1 = request.args.get('koribor_3month',False, float)
-            data2 = request.args.get('economic_growth_rate', False, float)
-            data3 = request.args.get('base_inflation', False, float)
-            data4 = request.args.get('interest_rate', False, float)
+            data1 = request.form['koribor_3month']
+            data2 = request.form['economic_growth_rate']
+            data3 = request.form['base_inflation']
+            data4 = request.form['interest_rate']
 
-            # data = {'koribor_3month':[data1], 'economic_growth_rate':[data2], 'base_inflation':[data3],'interest_rate':[data4]}
-            # df = pd.DataFrame(data)
             arr = [[data1,data2,data3,data4]]
             pred_kospi = np.round(model_kospi.predict(arr)[0], 2)
             
